@@ -31,6 +31,11 @@ jobs:
         run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run tests
+        run: pytest
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
